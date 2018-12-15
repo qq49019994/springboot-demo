@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+属于某个用户组时可见
+<button type="button" shiro:hasRole="admin">admin</button>
+<br/>
+属于某个几个时可见
+<button type="button" shiro:hasAnyRoles="admin,user">admin,user</button>
+<br/>
+拥有某个权限时可见
+<button type="button" shiro:hasPermission="删除用户">删除用户</button>
+<br/>
+拥有某个几个权限时可见
+<button type="button" shiro:hasAnyPermissions="删除用户,修改用户">删除用户,修改用户</button>
+<br/>
+未登录时可见
+<button type="button" shiro:guest>未登录</button>
+<br/>
+已登录时可见
+<button type="button" shiro:authenticated>已登录</button>
+<br/>
+不属于某个用户组时可见
+<button type="button" shiro:lacksRole="admin">admin</button>
+<br/>
+不拥有某个权限时可见
+<button type="button" shiro:lacksPermission="删除用户">删除用户</button>
+<br/>
+</body>
+</html>
