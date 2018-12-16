@@ -37,7 +37,10 @@
         <p class="login-box-msg">请输入您的账号和密码</p>
         <!-- 我们对div的text属性赋值 -->
         <!-- 具体用法后面会介绍 -->
-        <div th:text="${error}"></div>
+        <div class="callout callout-danger" th:if="${param.error}">
+            <h4>登录失败!</h4>
+            <p th:text="${param.error}"></p>
+        </div>
         <form action="/login" method="post">
             <div class="form-group has-feedback">
                 <!-- required 必填-->
